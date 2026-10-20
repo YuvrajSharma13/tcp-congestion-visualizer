@@ -132,7 +132,7 @@ class SimulateResponse(BaseModel):
     phases: list[PhaseSpan]
     queue: list[list[float]]
     rtt: list[list[float]] = Field(description="[t, flow, rtt_ms]")
-    throughput: list[list[float]] = Field(description="[t_mid, flow, goodput_mbps]")
+    throughput: list[list[Optional[float]]] = Field(description="[t_mid, flow, goodput_mbps]")
     events: list[EventItem]
     events_total: int
     playback: Optional[Playback]
