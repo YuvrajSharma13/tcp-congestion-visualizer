@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { font-feature-settings: "cv11", "ss01"; background: radial-gradient(1200px 600px at 70% -200px, rgba(59,130,246,.08), transparent 60%), #0b0e14; }
+  ::selection { background: rgba(59,130,246,.35); }
+  * { scrollbar-width: thin; scrollbar-color: #2f3849 transparent; }
+}
+@layer components {
+  .card { @apply rounded-xl border border-ink-600 bg-ink-800/80 backdrop-blur; }
+  .card-pad { @apply p-4; }
+  .label { @apply text-[11px] font-medium uppercase tracking-[0.12em] text-fg-3; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition
+         disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-primary { @apply btn bg-blue text-white hover:bg-blue/90 shadow-glow; }
+  .btn-ghost { @apply btn border border-ink-600 bg-ink-850 text-fg-2 hover:text-fg hover:border-ink-500; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  input[type=range].slider { @apply w-full appearance-none bg-transparent cursor-pointer; }
+  input[type=range].slider::-webkit-slider-runnable-track { @apply h-1.5 rounded-full bg-ink-600; }
+  input[type=range].slider::-webkit-slider-thumb { @apply -mt-[5px] h-4 w-4 appearance-none rounded-full border-2 border-blue bg-ink-950; box-shadow: 0 0 0 4px rgba(59,130,246,.15); }
+  input[type=range].slider::-moz-range-track { @apply h-1.5 rounded-full bg-ink-600; }
+  input[type=range].slider::-moz-range-thumb { @apply h-3.5 w-3.5 rounded-full border-2 border-blue bg-ink-950; }
+}
+.recharts-cartesian-grid line { stroke: #1e2432; }
+.recharts-text { fill: #9aa3b5; font-size: 11px; }
